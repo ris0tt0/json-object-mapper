@@ -576,6 +576,15 @@ var ObjectMapper;
         runDeserialization([conversionFunctionStructure]);
         return dtoInstance;
     };
+    ObjectMapper.deserializeInstance = function (instance, json) {
+        var conversionFunctionStructure = {
+            functionName: Constants.OBJECT_TYPE,
+            instance: instance,
+            json: json,
+        };
+        runDeserialization([conversionFunctionStructure]);
+        return instance;
+    };
     var runDeserialization = function (conversionFunctionStructures) {
         var converstionFunctionsArray = [];
         conversionFunctionStructures.forEach(function (struct) {

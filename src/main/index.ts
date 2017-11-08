@@ -34,6 +34,18 @@ export namespace ObjectMapper {
         return dtoInstance;
     };
 
+	export const deserializeInstance = <T>(instance:T, json: Object): T => {
+		const conversionFunctionStructure: ConversionFunctionStructure = {
+			functionName: Constants.OBJECT_TYPE,
+			instance: instance,
+			json: json,
+		};
+
+		runDeserialization([conversionFunctionStructure]);
+
+		return instance;
+	};
+
     const runDeserialization = (conversionFunctionStructures: ConversionFunctionStructure[]): void => {
 
         const converstionFunctionsArray: Array<ConversionFunctionStructure> = [];
