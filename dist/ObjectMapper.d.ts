@@ -31,10 +31,10 @@ export declare function JsonProperty(metadata?: JsonPropertyDecoratorMetadata): 
 /**
  * Decorator for specifying cache key.
  * Used for Serializer/Deserializer caching.
- * 
+ *
  * @export
- * @param {string} key 
- * @returns 
+ * @param {string} key
+ * @returns
  */
 export function CacheKey(key: string): Function;
 
@@ -55,6 +55,11 @@ export declare namespace ObjectMapper {
      */
     export function deserialize<T>(type: { new (): T }, json: Object): T;
 
+	/**
+     * Deserializes a Object instace with the passed on JSON data.
+     */
+	export function deserializeInstance<T>(instance:T, json: Object): T;
+
     /**
      * Deserializes an array of object types with the passed on JSON data.
      */
@@ -64,16 +69,15 @@ export declare namespace ObjectMapper {
      * Serializes an object instance to JSON string.
      */
     export function serialize(obj: any): String;
-    
+
 }
 
 /**
  * Default Date serializer implementation.
- * 
+ *
  * @class DateSerializer
  * @implements {Serializer}
  */
 export declare class DateSerializer implements Serializer {
     public serialize(value: Date): number;
 }
-
