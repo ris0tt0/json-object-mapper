@@ -19,7 +19,7 @@
     "name": "Shakil Siraj",
     "email": "shakil.siraj@gmail.com"
   },
-  "main": "./dist/ObjectMapper.es2015.js",
+  "main": "./dist/ObjectMapper.js",
   "typings": "./dist/ObjectMapper.d.ts",
   "moduleName": "ObjectMapper",
   "license": "MIT",
