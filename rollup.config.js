@@ -1,16 +1,18 @@
 import typescript from 'rollup-plugin-typescript';
 
 export default {
-    entry: './src/main/index.ts',
-    dest: './dist/ObjectMapper.es2015.js',
-    format: 'es',
-    external: [
-        'reflect-metadata'
-    ],
-    globals: {
-        "reflect-metadata": "Reflect"
-    },
-    plugins: [
-        typescript()
-    ]
+    input: './src/main/index.ts',
+	 plugins: [
+		  typescript()
+	 ],
+	 output:{
+	    file: './dist/ObjectMapper.js',
+	    format: "cjs",
+	    external: [
+	        'reflect-metadata'
+	    ],
+	    globals: {
+	        "reflect-metadata": "Reflect"
+	    }
+ 	}
 }
